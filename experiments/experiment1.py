@@ -36,7 +36,7 @@ for components in nComps:
 
 		# CLASSIFICATION STEP
 		# metric = minkowski, p=2 makes it euclidean distance
-		classifier = KNeighborsClassifier(2, metric="minkowski", p=2)
+		classifier = KNeighborsClassifier(1, metric="minkowski", p=2)
 		classifier.fit(new_X_train, Y_train)
 		y_pred = classifier.predict(new_X_test)
 
@@ -47,14 +47,13 @@ for components in nComps:
 		vals.append(accuracy_score(y_true=Y_test, y_pred=y_pred) * 100)
 	comps.append(vals)
 
-
 import matplotlib.pyplot as plt
 
-for i in range(3):
+for i in range(len(nComps)):
 	plt.plot(widths, comps[i], label=nComps[i])
 plt.title("Gaussian KernelPCA using varying width and number of components")
 plt.legend()
 plt.grid(True)
-plt.ylim([0,80])
-plt.xlim([100,4500])
+plt.ylim([0, 80])
+plt.xlim([100, 4500])
 plt.show()
