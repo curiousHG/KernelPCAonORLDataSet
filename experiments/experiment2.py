@@ -19,18 +19,16 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
 
 nComps = [10, 20, 30]
-widths = [i for i in range(200, 4401, 200)]
-
+degrees = [2, 3, 4]
 comps = []
 
 for components in nComps:
 	vals = []
-	for width in widths:
+	for degree in degrees:
 		# KernelPCA to the input data
 		# 𝜅(𝐮,𝐯)=exp(−𝛾‖𝐮−𝐯‖2)
 		# width = σ squared
-		gama = 1 / (2 * width)
-		kPCA = KernelPCA(n_components=components, kernel="rbf", gamma=gama)
+		kPCA = KernelPCA(n_components=components, kernel="poly", degree=degree)
 		new_X_train = kPCA.fit_transform(X_train)
 		new_X_test = kPCA.transform(X_test)
 
@@ -51,10 +49,10 @@ for components in nComps:
 import matplotlib.pyplot as plt
 
 for i in range(len(nComps)):
-	plt.plot(widths, comps[i], label=nComps[i])
+	plt.plot(degrees, comps[i], label=nComps[i])
 plt.title("Gaussian KernelPCA using varying width and number of components")
 plt.legend()
 plt.grid(True)
-plt.ylim([0, 80])
-plt.xlim([100, 4500])
+plt.ylim([0,80])
+plt.xticks(degrees)
 plt.show()
