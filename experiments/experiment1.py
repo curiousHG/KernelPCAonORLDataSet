@@ -1,7 +1,9 @@
+import sys
+sys.path.append("../")
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.decomposition import KernelPCA
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import confusion_matrix, classification_report, accuracy_score
+from sklearn.metrics import accuracy_score
 from utils.datasetMake import get_dataset
 from utils.testTrainSplit import testTrainSplit
 import matplotlib.pyplot as plt
