@@ -1,6 +1,7 @@
 import os
 import cv2
 import numpy as np
+from sklearn.utils import shuffle
 
 
 def get_dataset(img_folder=None):
@@ -20,4 +21,5 @@ def get_dataset(img_folder=None):
 			# image /= 255
 			img_data_array.append(image)
 			class_name.append(dir1)
+	img_data_array, class_name = shuffle(img_data_array, class_name, random_state=0)
 	return img_data_array, class_name
