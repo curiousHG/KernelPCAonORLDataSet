@@ -1,0 +1,17 @@
+kernel-pca:-
+    gaussian function (different sigma)
+    polynomial (different degree)
+pca
+1-NN classifier using euclidean distance:-
+    number of sample images per person
+    number of components in kernel-pca
+
+Three - Experiments:
+    Taking 1 image of each subject and performing further
+    1) Using Gaussian kernel-pca, Varying value of kernel width(best = 3000) and number of components(best=30, 10  or 20 are fine).
+    2) Using polynomial kernel-pca, varying the degree(better lower example best 2) of polynomial and number of features(20 or 30 are good enough
+    3) using PCA , number of principal components (best 30)
+
+Final experiment:
+    Comparing both pca and kernel-pca, varying number of images per person used for training
+
