@@ -1,12 +1,10 @@
 import sys
+
 sys.path.append("../")
-from sklearn.preprocessing import LabelEncoder, StandardScaler
-from sklearn.decomposition import KernelPCA
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import accuracy_score
+
 from utils.datasetMake import get_dataset
+from sklearn.preprocessing import LabelEncoder, StandardScaler
 from utils.testTrainSplit import testTrainSplit
-import matplotlib.pyplot as plt
 
 X, y = get_dataset()
 scalar = StandardScaler()
@@ -14,6 +12,11 @@ X = scalar.fit_transform(X)
 le = LabelEncoder()
 y = le.fit_transform(y)
 X_train, Y_train, X_test, Y_test = testTrainSplit(X, y, 1)
+
+from sklearn.decomposition import KernelPCA
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score
+
 nComps = [10, 20, 30]
 widths = [i for i in range(800, 4401, 200)]
 
@@ -40,7 +43,11 @@ for components in nComps:
 		vals.append(accuracy_score(y_true=Y_test, y_pred=y_pred) * 100)
 	comps.append(vals)
 
+
+import matplotlib.pyplot as plt
+
 for i in range(3):
 	plt.plot(widths, comps[i], label=nComps[i])
+plt.title("Experiment1 with Gaussian KernelPCA using varying width and number of components")
 plt.grid(True)
 plt.show()
