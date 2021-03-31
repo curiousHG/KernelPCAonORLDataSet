@@ -11,4 +11,11 @@ The project consists of a total of 4-experiments:-
         3) using PCA , number of principal components (best 30)
 
     Final experiment:
-        Comparing both pca and kernel-pca, varying number of images per person used for training
+        Comparing both pca and kernel-pca, varying number of images per person used for training.
+
+To run the file:-
+1. Open the folder code in terminal.
+2. Install python
+3. Run the command "pip install -r requirements.txt"
+4. Then go to experiments folder and run the command "python experiment1.py"
+5. The graph is obtained.

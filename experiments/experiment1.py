@@ -57,4 +57,7 @@ plt.legend()
 plt.grid(True)
 plt.ylim([0, 80])
 plt.xlim([100, 4500])
+2
+plt.xlabel("Width of gaussian function (σ²)")
+plt.ylabel("Accuracy score (in %)")
 plt.show()

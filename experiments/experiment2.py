@@ -30,6 +30,7 @@ for components in nComps:
 		# width = σ squared
 		kPCA = KernelPCA(n_components=components, kernel="poly", degree=degree)
 		new_X_train = kPCA.fit_transform(X_train)
+
 		new_X_test = kPCA.transform(X_test)
 
 		# CLASSIFICATION STEP
