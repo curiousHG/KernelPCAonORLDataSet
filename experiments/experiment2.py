@@ -30,7 +30,6 @@ for components in nComps:
         # width = σ squared
         kPCA = KernelPCA(n_components=components, kernel="poly", degree=degree)
         new_X_train = kPCA.fit_transform(X_train)
-
         new_X_test = kPCA.transform(X_test)
 
         # CLASSIFICATION STEP
@@ -38,10 +37,6 @@ for components in nComps:
         classifier = KNeighborsClassifier(1, metric="minkowski", p=2)
         classifier.fit(new_X_train, Y_train)
         y_pred = classifier.predict(new_X_test)
-
-        # print(classification_report(y_true=Y_test, y_pred=y_pred))
-        # print(classification_report(y_true=le.inverse_transform(Y_test),y_pred=le.inverse_transform(y_pred),zero_division=))
-        # print(int(accuracy_score(y_true=Y_test, y_pred=y_pred) * 100), f'Components = {components} and width = {width}')
         vals.append(accuracy_score(y_true=Y_test, y_pred=y_pred) * 100)
     comps.append(vals)
 

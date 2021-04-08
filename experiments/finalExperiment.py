@@ -18,7 +18,7 @@ X = scalar.fit_transform(X)
 le = preprocessing.LabelEncoder()
 Y = le.fit_transform(Y)
 
-no_of_images = [int(i) for i in range(1, 10, 1)]
+no_of_images = [i for i in range(1, 10)]
 
 gaussian_width = 3000
 components = 30
@@ -68,13 +68,14 @@ import matplotlib.pyplot as plt
 x = np.arange(1, len(no_of_images) + 1)
 plt.xticks(x, no_of_images)
 plt.yticks([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
-plt.plot(no_of_images, meanAccuracy,color = 'orange')
+plt.plot(no_of_images, meanAccuracy, color='orange')
+
 ax = plt.subplot()
 ax.bar(no_of_images, gaussian, width=0.2, color='g', align='center')
 ax.bar(np.array(no_of_images) - 0.2, polynomial, width=0.2, color='b', align='center')
 ax.bar(np.array(no_of_images) + 0.2, pca, width=0.2, color='r', align='center')
 ax.yaxis.grid(True)
-ax.legend(['Mean accuracy','KPCA(Gaussian width 3000)', 'KPCA(Polynomial with degree 2)', 'PCA'])
+ax.legend(['Mean accuracy', 'KPCA(Gaussian width 3000)', 'KPCA(Polynomial with degree 2)', 'PCA'])
 plt.title("Performance results with varying number of training images per person (using 30 features)")
 plt.xlabel("Number of Training Images")
 plt.ylabel("Correct Recognition Rate")
