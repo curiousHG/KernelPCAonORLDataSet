@@ -14,8 +14,8 @@ The project consists of a total of 4-experiments:-
         Comparing both pca and kernel-pca, varying number of images per person used for training.
 
 To run the file:-
-1. Open the folder code in terminal.
-2. Install python
+1. Open the code folder in terminal.
+2. Check if python is installed using "python -V"
 3. Run the command "pip install -r requirements.txt"
 4. Then go to experiments folder and run the command "python experiment1.py"
-5. The graph is obtained.
+5. Repeat step 4 for each experiment by changing experiment name all the results will be obtained.
