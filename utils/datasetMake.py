@@ -13,13 +13,11 @@ def get_dataset(img_folder=None):
 		for file in os.listdir(os.path.join(img_folder, dir1)):
 			image_path = os.path.join(img_folder, dir1, file)
 			image = cv2.imread(image_path, 0)
-			IMG_HEIGHT, IMG_WIDTH = (68, 56)
-			image = cv2.resize(image, (IMG_HEIGHT, IMG_WIDTH))
+			image = cv2.resize(image, (68, 56))
 			image = np.array(image)
 			image = image.ravel()
 			image = image.astype('float32')
-			# image /= 255
 			img_data_array.append(image)
 			class_name.append(dir1)
-	img_data_array, class_name = shuffle(img_data_array, class_name, random_state=0)
+	img_data_array, class_name = shuffle(img_data_array, class_name, random_state=42)
 	return img_data_array, class_name
