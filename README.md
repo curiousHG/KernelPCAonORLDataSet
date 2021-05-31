@@ -1,3 +1,4 @@
+##Kernel PCA on ORL dataset
 In this project we look at how KernelPCA compares to PCA with using different parameters like number of components width of gaussian kernel and degree of polynomial kernel.and
 The project has two components a feature extraction step and classification step.
 This project is majorly about feature extraction using PCA and KernelPCA.
@@ -18,4 +19,4 @@ To run the file:-
 2. Check if python is installed using "python -V"
 3. Run the command "pip install -r requirements.txt"
 4. Then go to experiments folder and run the command "python experiment1.py"
-5. Repeat step 4 for each experiment by changing experiment name all the results will be obtained.
+5. Repeat step 4 for each experiment by changing experiment name(experiment2,3 and finalExperiment.py) and all the results will be obtained.
