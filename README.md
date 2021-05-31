@@ -1,4 +1,4 @@
-##Kernel PCA on ORL dataset
+## Kernel PCA on ORL dataset
 In this project we look at how KernelPCA compares to PCA with using different parameters like number of components width of gaussian kernel and degree of polynomial kernel.and
 The project has two components a feature extraction step and classification step.
 This project is majorly about feature extraction using PCA and KernelPCA.
