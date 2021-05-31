@@ -18,7 +18,7 @@ from sklearn.decomposition import PCA
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
 
-components = [10, 20, 30, 40]
+components = [i for i in range(1,41)]
 accuracy_components = []
 
 for comp in components:

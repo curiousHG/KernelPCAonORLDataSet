@@ -19,5 +19,5 @@ def get_dataset(img_folder=None):
 			image = image.astype('float32')
 			img_data_array.append(image)
 			class_name.append(dir1)
-	img_data_array, class_name = shuffle(img_data_array, class_name, random_state=42)
+	img_data_array, class_name = shuffle(img_data_array, class_name)
 	return img_data_array, class_name
